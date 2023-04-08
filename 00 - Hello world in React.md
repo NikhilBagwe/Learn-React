@@ -1,6 +1,7 @@
 ## Intro :
 
 - Here I have used React without actually installing it.
+- This is the CORE way of creating a React element.
 - Since it is just a library, we have simply added the CDN links and now we use React in our project.
 - No complex things such as JSX, Props, etc. are used, just simple HTML and JS.
 
@@ -58,8 +59,49 @@
 - We pass 3 parameters in it.
 - Type of HTML element we want.
 - Attributes/props of that element
-- Text to be rendered.
+- Text  or element to be rendered.
 
+## Rendering a Nested React element :
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+      // creating a Nested React element
+      const heading1 = React.createElement('h1', {
+        id:'title'
+      }, 'Heading 1')
+      const heading2 = React.createElement('h2', {
+        id:'title'
+      }, 'Heading 2')
+
+      // Passing multiple children into an React element
+      const container = React.createElement('div', {
+        id: 'container'
+      }, [heading1, heading2])
+
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      
+      root.render(container)
+    </script>
+  </body>
+</html>
+
+```
+
+### FACT : React team wanted to write all their HTML, CSS inside JS. So they came up with this idea.
 
 
 
