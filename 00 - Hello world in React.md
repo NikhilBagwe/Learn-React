@@ -11,26 +11,59 @@
     <title>Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
   </head>
-  
+
   <body>
+    <div class="header">Header</div>
     <div id="root"></div>
+    <div class="footer">Footer</div>
+  
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+      // creating a React element
+      const heading = React.createElement('h1', {
+        id: 'title'
+      }, 'Namaste React')
+      console.log(heading)
+
+      // Telling React that this is my root element inside which i want to run react code
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      
+      root.render(heading)
+    </script>
   </body>
-
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-  <script>
-    // creating a React element
-  	const heading = React.createElement('h1', {}, 'Namaste React')
-
-    // Telling React that this is my root element inside which i want to run react code
-    const root = ReactDOM.createRoot(document.getElementById('root'))
-    
-    root.render(heading)
-  </script>
 </html>
 
+
 ```
+
+- We can have rest of our HTML code inside body tag with root element. Still react will work fine since it's just a library. Whatever React code will be rendered only in that root element, rest code will be unaffected.
+
+```html
+<body>
+    <div class="header">Header</div>
+    <div id="root"></div>
+    <div class="footer">Footer</div>
+</body>
+```
+
+- We can also have multiple root elements in React but generally we use only one.
+- NOTE: Even if we hardcode some elements inside root, on rendering React will override everything and will only display the elements which we passed inside render()
+
+## Understaning React.createElement() :
+
+- We pass 3 parameters in it.
+- Type of HTML element we want.
+- Attributes/props of that element
+- Text to be rendered.
+
+
+
+
+
+
+
+
