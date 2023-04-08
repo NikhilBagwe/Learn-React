@@ -56,10 +56,11 @@
 
 ## Understaning React.createElement() :
 
-- We pass 3 parameters in it.
+- React Element is a plain JS object.
+- In createElement(), we pass 3 parameters in it.
 - Type of HTML element we want.
 - Attributes/props of that element
-- Text  or element to be rendered.
+- Text or element to be rendered.
 
 ## Rendering a Nested React element :
 
