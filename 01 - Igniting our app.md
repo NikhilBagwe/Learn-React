@@ -63,11 +63,62 @@
 - We will install react as a Dependency in our project.
 - "npm i react react-dom".
 
+## Igniting our app using Parcel :
+
+- npx (Node Package Execute) - means to execute something using npm
+- Execute cmd : npx parcel index.html - "index.html" is the entry point
+- This command will execute our code and host it on localhost server.
+- On editing file, the server will even reload our page.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+
+  <body>
+    <div id="root">Not rendered</div>
+    <script type="module" src="App.js"></script>
+  </body>
+</html>
+
+```
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+// creating a Nested React element
+const heading1 = React.createElement('h1', {
+    id:'title'
+  }, 'Heading 1')
+  const heading2 = React.createElement('h2', {
+    id:'title'
+  }, 'Heading 2')
+
+  // Passing multiple children into an React element
+  const container = React.createElement('div', {
+    id: 'container'
+  }, [heading1, heading2])
+
+  const root = ReactDOM.createRoot(document.getElementById('root'))
+  
+  root.render(container)
+```
+
+### But we might encounter a error : Browser scripts cannot have imports or exports. For that add "<script type="module" src="App.js"></script>"
+
+- We have to tell browser that we are using a module, not a normal script file. We cannot import/export scripts
+- Now everything will work as expected. Parcel will do everything for you from compiling to hosting.
 
 
 
 
-## video : 
+
+## video : 1.26.00
 
 
 
