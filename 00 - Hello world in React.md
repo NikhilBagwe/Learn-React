@@ -59,7 +59,7 @@
 - React Element is a plain JS object.
 - In createElement(), we pass 3 parameters in it.
 - Type of HTML element we want.
-- Attributes/props of that element
+- Attributes/props of that element. We can pass anything in it. It's not necessary it should be an HTML attribute. Eg: {hello:"world"}
 - Text or element to be rendered.
 
 ## Rendering a Nested React element :
