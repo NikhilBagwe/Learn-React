@@ -43,13 +43,31 @@
 - package-lock.json file keeps track of which exact version of given package is been used in our code as the package might get auto-updated.
 - Never put it in gitignore file.
 - It basically maintains the exact version of all packages to avoid the situation where " Your app runs on local but dosen't work in production".
+- Also it keeps track of each and every package installed in node_modules.
 
 ### node_modules :
 
 - A folder with name node_modules is created which contains the folder with files for Parcel along with further dependencies.
 - Our project is dependent on parcel. Then parcel is depenedent on futher packages/modules also. Those are installed in node_modules.
 
+### NOTE: We never put node_modules onto git repo because they are very heavy. We can generate everything we have in node_modules if we have package-lock.json and package.json files. So we generate node_modules onto our servers using them.
 
+## Don't use CDN :
+
+- In case the React version is updated, we have to update our link and do the whole process of deployment again.
+- When we host our app, the node_modules are present on our server. It is easier to access files stored on our server than CDN which are stored elsewhere.
+- So lets install React into our node_modules.
+
+## Installing React into node_modules :
+
+- We will install react as a Dependency in our project.
+- "npm i react react-dom".
+
+
+
+
+
+## video : 
 
 
 
