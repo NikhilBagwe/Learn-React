@@ -17,6 +17,7 @@
 - Parcel is a bundler which basically is a package.
 - Parcel is a beast. It does a lot of things for us BTS.
 - Provides HMR - Hot Module Reloading i.e. Parcel keeps a track of all the files we are updating in real-time and reloads the server automatically. It does this by using File Watcher Algorithm which is written in C++.
+- Parcel even does Image optimization for us. 
 - A package is a JS module. 
 - To install Parcel into our project we need a Package manager. 
 - We use NPM for it.
@@ -57,7 +58,7 @@
 ## Don't use CDN :
 
 - In case the React version is updated, we have to update our link and do the whole process of deployment again.
-- When we host our app, the node_modules are present on our server. It is easier to access files stored on our server than CDN which are stored elsewhere.
+- When we host our app, the node_modules are present on our server. It is easier to access files stored on our server than CDN which are stored elsewhere on third-party servers.
 - So lets install React into our node_modules.
 
 ## Installing React into node_modules :
@@ -75,6 +76,7 @@
 - A folder with name ".parcel-cache" is created, which is used by parcel to do it's things(minify files, HMR, etc). It is a separate space used by parcel.
 - To build a production build : "npx parcel build index.html"
 - When we use Parcel to build our project, we need to remove {"main": "App.js",} i.e entry point of our app from package.json as we provide the new entry point in our build command itself. Or else parcel will throw error.
+- After running the build command, Parcel will create 3 main files inside "dist" folder which are html, css, js. It will bundle, minified, clean console.logs all of your code into this 3 files.
 
 ```html
 <!DOCTYPE html>
@@ -120,11 +122,19 @@ const heading1 = React.createElement('h1', {
 - We have to tell browser that we are using a module, not a normal script file. We cannot import/export scripts
 - Now everything will work as expected. Parcel will do everything for you from compiling to hosting.
 
+## Flow of our app after deploying on production :
+
+- node_modules folder is on server.
+- When client/user machine sends a request to server, the server ships the production build to the user.
+- node_modules are not sent to client.
+- Production build already contains the node_modules in minified form.
+- Now the most heaviest thing for our website is the "media" i.e images, videos, etc.
+- For us, Parcel even does Image optimization for us. 
 
 
 
 
-## video : 1.26.00
+## video : 1.49.20
 
 
 
