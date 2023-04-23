@@ -131,10 +131,25 @@ const heading1 = React.createElement('h1', {
 - Now the most heaviest thing for our website is the "media" i.e images, videos, etc.
 - For us, Parcel even does Image optimization for us. 
 
+## Important features of Parcel :
+
+- HMR
+- Bundling
+- Minify
+- Cleaning our code
+- Super fast build algorithm
+- Image optimization
+- Caching while development - When you run the build cmd first time, Parcel will take sometime to process it. Then the next time you run build cmd again, it will take less time to execute as the previous was cached in parcel-cache folder.
+- Renames long named variables to smaller ones in your code
+- Makes sure code is compatible with older version of browsers.
+- HTTPS on dev machine - npx parcel index.html --https : Won't work on localhost
+- Uses Consistent Hashing algorithm
+
+### NOTE: We should keep "parcel-cache" folder in .gitignore. Anything that we can generate on SERVER should never be pushed to GITHUB. Such as node_modules, parcel-cache
 
 
 
-## video : 1.49.20
+## video : 2.04.00
 
 
 
