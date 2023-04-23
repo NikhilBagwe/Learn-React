@@ -15,6 +15,8 @@
 ## Parcel :
 
 - Parcel is a bundler which basically is a package.
+- Parcel is a beast. It does a lot of things for us BTS.
+- Provides HMR - Hot Module Reloading i.e. Parcel keeps a track of all the files we are updating in real-time and reloads the server automatically. It does this by using File Watcher Algorithm which is written in C++.
 - A package is a JS module. 
 - To install Parcel into our project we need a Package manager. 
 - We use NPM for it.
@@ -69,6 +71,10 @@
 - Execute cmd : npx parcel index.html - "index.html" is the entry point
 - This command will execute our code and host it on localhost server.
 - On editing file, the server will even reload our page.
+- "dist" folder is created which stores the minified, faster development version of our project and serves it on the server. It stores the development build.
+- A folder with name ".parcel-cache" is created, which is used by parcel to do it's things(minify files, HMR, etc). It is a separate space used by parcel.
+- To build a production build : "npx parcel build index.html"
+- When we use Parcel to build our project, we need to remove {"main": "App.js",} i.e entry point of our app from package.json as we provide the new entry point in our build command itself. Or else parcel will throw error.
 
 ```html
 <!DOCTYPE html>
