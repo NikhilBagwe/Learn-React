@@ -18,7 +18,7 @@
 - It is a ZERO-config bundler(i.e just give it the entry point of app and it will figure out the rest)
 - Parcel is a beast. It does a lot of things for us BTS.
 - Actually Parcel dosen't do everything by itself. It uses other many packages and leverages their power to orchestrate things. These packages used by Parcel are called TRANSITIVE Dependencies. You can check for dependencies of Parcel in package-lock.json file.
-- Provides HMR - Hot Module Reloading i.e. Parcel keeps a track of all the files we are updating in real-time and reloads the server automatically. It does this by using File Watcher Algorithm which is written in C++.
+- Provides HMR - Hot Module Replacement i.e. Parcel keeps a track of all the files we are updating in real-time and reloads the server automatically. It does this by using File Watcher Algorithm which is written in C++.
 - Parcel even does Image optimization for us. 
 - A package is a JS module. 
 - To install Parcel into our project we need a Package manager. 
@@ -149,9 +149,19 @@ const heading1 = React.createElement('h1', {
 
 ### NOTE: We should keep "parcel-cache" folder in .gitignore. Anything that we can generate on SERVER should never be pushed to GITHUB. Such as node_modules, parcel-cache
 
+## Make your app work on older browsers:
+
+- There is a package with name "browserlists" installed with Parcel.
+- Go to package.json. Add a new property "browsersList" there and assign an empty array to it.
+- Now go to "browserlists.dev" website and from their copy commands/queries and paste into the array.
+
+## Imp. notes from overall session :
+
+- Never say React does minification of files. Parcel i.e the bundler does it using some algorithm from other package.
+- Up until now we have built our own CREATE-REACT-APP. Our project has nearly all functionalities provided by CRA.
 
 
-## video : 2.04.00
+## video : 2.46.00
 
 
 
