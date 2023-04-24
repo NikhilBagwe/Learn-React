@@ -15,14 +15,16 @@
 ## Parcel :
 
 - Parcel is a bundler which basically is a package.
+- It is a ZERO-config bundler(i.e just give it the entry point of app and it will figure out the rest)
 - Parcel is a beast. It does a lot of things for us BTS.
+- Actually Parcel dosen't do everything by itself. It uses other many packages and leverages their power to orchestrate things. These packages used by Parcel are called TRANSITIVE Dependencies. You can check for dependencies of Parcel in package-lock.json file.
 - Provides HMR - Hot Module Reloading i.e. Parcel keeps a track of all the files we are updating in real-time and reloads the server automatically. It does this by using File Watcher Algorithm which is written in C++.
 - Parcel even does Image optimization for us. 
 - A package is a JS module. 
 - To install Parcel into our project we need a Package manager. 
 - We use NPM for it.
 
-### NOTE: NPM dosen't stand for Node package manager. There no actual full name for it. 
+### NOTE: NPM dosen't stand for Node package manager. There no actual full name for it. A Package Manager takes care of the TRANSITIVE Dependencies of our project.
 
 - NPM manages all the packages that we use in our React project. Our React app is powered by multiple packages.
 - NPM generates package.json file.
