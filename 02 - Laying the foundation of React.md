@@ -118,11 +118,28 @@ const heading = React.createElement('h1', null, 'Heading')
 - Syntactic sugar
 - Less code and easy to maintain.
 
+## Components :
 
+- Everything is a component in React.
+- 2 types : Functional component and Class based component.
+- Any component's name starts with Capital letter. It's not mandatory but it is a good practice.
 
+## Functional component :
 
+- Functional component is nothing but just a normal JS function which returns some piece of JSX code or React element.
 
+```js
+const HeaderComp = () => {
+  return <h1>Navbar</h1>
+}
 
+// OR
+
+const HeaderComp = function () {
+  return <h1>Navbar</h1>
+}
+```
+- 2.04.00
 
 
 
