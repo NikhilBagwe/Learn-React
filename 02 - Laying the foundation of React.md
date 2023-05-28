@@ -18,5 +18,5 @@
   "build" : "parcel build index.html",
 }
 ```
-- Now you just have to write "npm run start"
+- Now you just have to write "npm run start" or just "npm start".
 - Why we skipped 'npx' in our script : npx executes a package without downloading it unlike we use npm to install something into our app also run it. So npm = npx. And while executing cmd we write 'npm ' ourself. So we skip npx.
