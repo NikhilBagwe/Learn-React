@@ -87,13 +87,6 @@ const heading = <h1 id="title" key="h1">Heading</h1>
 - Babel in itself is just a library which takes the above JSX code and outputs the normal code.
 - It goes line by line through your code and when it sees an angular bracket '<' it understands it is JSX and thus creates the required code for it.
 
-## How is JSX executed ?
-
-- React.createElement gives us a JS obj, which then gets coverted to HTML.
-- JSX uses React.createElement() behind the scene.
-- JSX => React.createElement() => Object => HTML.
-
-
 ### NOTE : So is JSX, HTML inside JavaScript ? : Answer - False. JSX is just an HTML like syntax but not HTML. The attributes which we add to JSX elements are written in Camel case convention which is follwed by JS. Thus, JSX is valid JS.
 
 ## key vs id :
@@ -101,8 +94,29 @@ const heading = <h1 id="title" key="h1">Heading</h1>
 - 'id' is a concept of HTML.
 - While React keeps track of 'key' while rendering DOM. It dosen't care what 'id' the element has.
 
+## How is JSX executed ? Babel
 
+- React.createElement gives us a JS obj, which then gets coverted to HTML.
+- JSX uses React.createElement() behind the scene.
+- JSX => React.createElement() => Object => HTML.
+- Babel converts JSX to React.createElement then futher process happens.
 
+```js
+// JSX code
+const heading = <h1>Heading</h1>
+
+// Babel's o/p as React
+const heading = React.createElement('h1', null, 'Heading')
+
+// Check out to try it out: https://babeljs.io/
+```
+
+## Advantages of JSX :
+
+- Readibility
+- Good developer experience
+- Syntactic sugar
+- Less code and easy to maintain.
 
 
 
