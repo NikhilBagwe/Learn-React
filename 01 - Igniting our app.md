@@ -138,7 +138,7 @@ const heading1 = React.createElement('h1', {
 - HMR
 - Bundling
 - Minify
-- Cleaning our code
+- Cleaning our code - Remember Parcel or Babel dosen't remove console.log() from our code directly. We have to configure our project for that. We have a plugin "babel-plugin-transform-remove-console" to remove console.log from our code.
 - Super fast build algorithm
 - Image optimization
 - Caching while development - When you run the build cmd first time, Parcel will take sometime to process it. Then the next time you run build cmd again, it will take less time to execute as the previous was cached in parcel-cache folder.
