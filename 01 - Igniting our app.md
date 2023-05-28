@@ -146,6 +146,7 @@ const heading1 = React.createElement('h1', {
 - Makes sure code is compatible with older version of browsers.
 - HTTPS on dev machine - npx parcel index.html --https : Won't work on localhost
 - Uses Consistent Hashing algorithm
+- Tree Shaking - Removes unwanted code. Suppose your app is importing a library which gives your app access to 10-20 helper functions. On importing that library all those 10-20 funcs will come into your code but you use only 2-3 of them. So Parcel will ignore the rest of functions.
 
 ### NOTE: We should keep "parcel-cache" folder in .gitignore. Anything that we can generate on SERVER should never be pushed to GITHUB. Such as node_modules, parcel-cache
 
