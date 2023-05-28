@@ -7,3 +7,16 @@
 - So we don't have to write polyfills.
 
 ### NOTE : 'git init' is a command which makes your folder/repo compatible with git. Also generates '.gitignore' file. You can also use all features of git in your repo now such as branching, push, pull, etc.
+
+## Building a script in package.json :
+
+- Writing 'npx parcel index.html' everytime is not feasible.
+- So we create a script as below :
+```js
+"scripts" : {
+  "start" : "parcel index.html",
+  "build" : "parcel build index.html",
+}
+```
+- Now you just have to write "npm run start"
+- Why we skipped 'npx' in our script : npx executes a package without downloading it unlike we use npm to install something into our app also run it. So npm = npx. And while executing cmd we write 'npm ' ourself. So we skip npx.
