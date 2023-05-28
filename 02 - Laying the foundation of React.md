@@ -70,9 +70,36 @@ const heading1 = React.createElement(
 ```
 - Then React converts the object to HTML and puts in on the DOM.
 
+## JSX : 
+
+- As we saw in above code, making react apps using React.createElement() will become messy for complex app design.
+- Thus, we use JSX.
+- People say JSX stands for "Javascript XML" even though there is no official name for it in the docs.
+- Motivation behind JSX: When FB created React, there main motive was to write/update HTML using JS. So createElement API was introduced. But again for complex designs the code became lengthy, messy and less readable using createElement. Thus, finally JSX was introduced.
+
+```js
+// <h1>Heading</h1> is JSX not a string and is a perfectly valid JS code.
+
+const heading = <h1 id="title" key="h1">Heading</h1>
+```
+- If you paste the above code in browser's console, it won't understand it and throw error.
+- Babel understands the JSX code.
+- Babel in itself is just a library which takes the above JSX code and outputs the normal code.
+- It goes line by line through your code and when it sees an angular bracket '<' it understands it is JSX and thus creates the required code for it.
+
+## How is JSX executed ?
+
+- React.createElement gives us a JS obj, which then gets coverted to HTML.
+- JSX uses React.createElement() behind the scene.
+- JSX => React.createElement() => Object => HTML.
 
 
+### NOTE : So is JSX, HTML inside JavaScript ? : Answer - False. JSX is just an HTML like syntax but not HTML. The attributes which we add to JSX elements are written in Camel case convention which is follwed by JS. Thus, JSX is valid JS.
 
+## key vs id :
+
+- 'id' is a concept of HTML.
+- While React keeps track of 'key' while rendering DOM. It dosen't care what 'id' the element has.
 
 
 
