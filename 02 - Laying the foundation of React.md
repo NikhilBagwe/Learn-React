@@ -24,6 +24,7 @@
 ## Assigning key prop to children of a list :
 
 - Why do we need a key? : When there are multiple children and we add a new children to the list. Thus, React has to update/rerender the DOM. React has to take a lot of efforts while updating the DOM with children not having keys. Thus, we introduce key prop to uniquely identify an children and React easily injects it at the desired location w/o much efforts.
+- Read more : https://legacy.reactjs.org/docs/reconciliation.html
 - As shown in the below code, each children of a list/array must have a key prop to uniquely identify it.
 
 ```js
@@ -51,6 +52,23 @@ root.render(container)
 ```
 - Otherwise we may get error : Warning: Each child in a list should have a unique "key" prop.
 
+## How does React.createElement() works :
+
+- In Below code React.createElement() creates a JS object :
+
+```js
+const heading1 = React.createElement(
+  "h1",
+  {
+    id: "title",
+    key: "h1",
+  },
+  "Heading 1"
+);
+
+// In console we see the object : {$$typeof: Symbol(react.element),...}
+```
+- Then React converts the object to HTML and puts in on the DOM.
 
 
 
