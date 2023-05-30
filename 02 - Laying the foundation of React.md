@@ -139,9 +139,95 @@ const HeaderComp = function () {
   return <h1>Navbar</h1>
 }
 ```
-- 2.04.00
+### React element vs Component :
+
+- They look very similar. 
+- Syntax when rendering them is different.
+
+```js
+// React element - Just a normal JS variable. After getting parsed it is just a JS object.
+
+const heading = (
+   <h1 id="title" key="h1">
+      Heading
+   </h1>
+)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
 
 
+
+// Component - After getting parsed it is just a JS function that returns JSX code.
+
+const HeaderComponent = () => {
+  return(
+    <div>
+      <h1>Functional Component</h1>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, officiis!</h3>
+    </div>
+  )
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeaderComponent/>);
+```
+
+### Rendering React element inside Component :
+
+```js
+const heading = (
+  <h1 id="title" key="h1">
+     React Element
+  </h1>
+)
+
+const HeaderComponent = () => {
+  return(
+    <div>
+      {heading}
+      <h1>Functional Component</h1>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, officiis!</h3>
+    </div>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeaderComponent/>);
+```
+
+### Rendering Component inside Component :
+
+- Instead of curly brackets, we have write it as a tag.
+- OR we can call it like a normal JS function.
+
+```js
+const Heading = () => (
+  <h1 id="title" key="h1">
+     React Element
+  </h1>
+)
+
+const HeaderComponent = () => {
+  return(
+    <div>
+      <Heading/>
+      <h1>Functional Component</h1>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, officiis!</h3>
+    </div>
+  )
+}
+
+// OR ------------------
+
+const HeaderComponent = () => {
+  return(
+    <div>
+      {Heading()}
+      <h1>Functional Component</h1>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, officiis!</h3>
+    </div>
+  )
+}
+```
 
 
 
