@@ -142,7 +142,7 @@ const HeaderComp = function () {
 ### React element vs Component :
 
 - They look very similar. 
-- Syntax when rendering them is different.
+- Syntax when writing and rendering them inside root is different.
 
 ```js
 // React element - Just a normal JS variable. After getting parsed it is just a JS object.
@@ -216,7 +216,7 @@ const HeaderComponent = () => {
   )
 }
 
-// OR ------------------
+// OR ------------------ Call it like a normal function
 
 const HeaderComponent = () => {
   return(
@@ -228,6 +228,15 @@ const HeaderComponent = () => {
   )
 }
 ```
+
+## Component Composition :
+
+- When we use a component inside a component as we did above, that is called as Component Composition or Composing Components.
+
+## Advantages of JSX :
+
+- JSX is powerful. You can write any piece of JS code inside { } curly brackets. 
+- IMP : JSX is very secure. It protects your app from Cross-site scripting attacks. It does this by "sanitizing" your JS code.
 
 
 
