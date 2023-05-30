@@ -238,5 +238,13 @@ const HeaderComponent = () => {
 - JSX is powerful. You can write any piece of JS code inside { } curly brackets. 
 - IMP : JSX is very secure. It protects your app from Cross-site scripting attacks. It does this by "sanitizing" your JS code.
 
+## Questions :
+
+### Will JSX work if Parcel is not installed as Babel is a dependency ?
+
+- No. JSX won't work if parcel is not installed.
+- Even if we don't use parcel, we will have to use Babel. Like in CRA, babel comes with Webpack.
+
+- 2.41.00
 
 
