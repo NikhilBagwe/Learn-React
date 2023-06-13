@@ -21,3 +21,28 @@ const HeaderComponent = () => {
 - No it is not mandatory.
 - React is very flexible library.
 - We can also use React in a particular part of a website for example footer.
+
+## Structuring our food ordering app :
+
+```js
+const AppLayout = () => {
+  return(
+    {/**
+    Header
+      - Logo
+      - Nav items on right side
+      - Cart
+    Body
+      - Search Bar
+      - Restaurant List
+        - Restaurant Card
+          - Image
+          - Cuisine
+          - Rating
+          - Name
+    Footer   
+      - links
+    */}
+  )
+}
+```
