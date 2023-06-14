@@ -79,10 +79,13 @@ const AppLayout = () => {
 }
 ```
 - We cannot pass any attributes into it.
+- Question : Can we use React fragment inside a React fragment ????
 
 ## Adding CSS using 'style' :
 
-- style takes an JS object containing CSS styles.
+- In React we cannot use the normal way to add styling to out component i.e using inline CSS using 'style' attribute.
+- Since, we are using JSX, it is like writing HTML inside JS. So we have a different way of adding styles to our app.
+- IN JSX component, 'style' attribute takes an JS object containing CSS styles.
 ```js
 const styleObj = {
   backgroundColor:'red',
@@ -96,7 +99,9 @@ const Body = () => {
 }
 ```
 
+## Adding CSS using 'className' :
 
+- Another way to add CSS is to give the JSX element a className and write CSS inside 'index.css' file.
 
 
 
