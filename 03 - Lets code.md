@@ -179,9 +179,14 @@ const Body = () => {
 }
 ```
 
+## Virtual DOM :
+
+- VD is not only a concept of React.
+- In VD we keep the virtual representation of our original DOM with us.
 
 
 
+## 2.35.00
 
 
 8
