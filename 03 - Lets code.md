@@ -148,9 +148,23 @@ const RestaurantCard = ({ restaurant }) => {
   )
 }
 ```
+- To even simplify further we can use 'Spread' operator to destructure the obj on the fly.
+```js
+const RestaurantCard = ({ name, cusines }) => {
+  return(
+    <div>
+      <h1>{name}</h1>
+    </div>
+  )
 
-
-
+const Body = () => {
+  return(
+    <div>
+      <RestaurantCard {...restaurantList[0].data}>
+    </div>
+  )
+}
+```
 
 
 
