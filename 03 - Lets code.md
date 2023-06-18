@@ -166,6 +166,19 @@ const Body = () => {
 }
 ```
 
+- Even more better way will be to use 'map' function to iterate on JS obj.
+```js
+const Body = () => {
+  return(
+    <div>
+      {restaurantList.map(restaurant => {
+        return <RestaurantCard {...restaurantList.data}>
+      })}
+    </div>
+  )
+}
+```
+
 
 
 
