@@ -104,16 +104,49 @@ const Body = () => {
 
 - Another way to add CSS is to give the JSX element a className and write CSS inside 'index.css' file.
 
-## Config Driven UI (System Design) :
+## Config Driven UI System Design :
 
 - The whole UI of the website is driven by the configs send from the backend API.
 - Lets take example of Swiggy. It may have different offers running in different cities. But it cannot have different website for each city.
 - So here we control the UI of the single website using the config, and display it differently to the user based on its location.
 
+## Props :
 
+- Shorthand for  Properties.
+- Basically we pass some data into our Functional Component using props.
+  
+```js
+const RestaurantCard = (props) => {
+  return(
+    <div>
+      <h1>{props.restaurant.data?.name}</h1>
+    </div>
+  )
+}
 
-
-
+const Body = () => {
+  return(
+    <div>
+      {RestaurantCard(restaurantList[0])}
+      <RestaurantCard restaurant = {restaurantList[0]}>
+    </div>
+  )
+}
+```
+- Props are similar to passing an argument into a JS function and are received as parameters into the function.
+- We can pass multiple props.
+- We can also destructure the props so to avoid writing 'props.restaurant..'
+  
+```js
+const RestaurantCard = ({ restaurant }) => {
+  const {name, cuisines} = restaurant.data // we can further destructure the 'restaurant' obj
+  
+  return(
+    <div>
+      <h1>{name}</h1>
+    </div>
+  )
+}
 
 
 
