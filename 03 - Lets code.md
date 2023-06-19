@@ -195,7 +195,8 @@ const Body = () => {
 - Suppose we have 4 divs in React.
 - Now React knows that it has to render 4 divs.
 - Now a fifth div is introduced at the first place.
-- Now React dosen't knows in which order the divs were placed. Thus it re-renders the every thing but we don't need that to happen.
+- Now React dosen't knows in which order the divs were placed as all are same tags. If tags were different like img and div tag then React will understand but in our case all tags are similar.
+-  Thus it re-renders the every thing but we don't need that to happen.
 - Now if we add a unnique key to every div, React will exactly remember how divs were placed.
 
 ## NOTE : React Fiber is a new React Reconcilation engine introduced in React 16
