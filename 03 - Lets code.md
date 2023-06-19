@@ -172,7 +172,7 @@ const Body = () => {
   return(
     <div>
       {restaurantList.map(restaurant => {
-        return <RestaurantCard {...restaurantList.data}>
+        return <RestaurantCard {...restaurantList.data} key={restaurant.data.id}>
       })}
     </div>
   )
@@ -182,7 +182,28 @@ const Body = () => {
 ## Virtual DOM :
 
 - VD is not only a concept of React.
+- VD is a representation of the actual DOM.
 - In VD we keep the virtual representation of our original DOM with us.
+
+### Why do we need VD ?
+
+- We need it for Reconciliation in React.
+- Reconciliation is an diff algorithm used by React to find out the difference between the trees i.e Actual DOM and VD and this is how it finds out which part of UI needs to be updated and thus only re-renders that small part of website.
+
+## Why we use keys in React ?
+
+- Suppose we have 4 divs in React.
+- Now React knows that it has to render 4 divs.
+- Now a fifth div is introduced at the first place.
+- Now React dosen't knows in which order the divs were placed. Thus it re-renders the every thing but we don't need that to happen.
+- Now if we add a unnique key to every div, React will exactly remember how divs were placed.
+
+## NOTE : React Fiber is a new React Reconcilation engine introduced in React 16
+
+## HW : Why don't we use the index from map as the key for our components ?
+
+
+
 
 
 
