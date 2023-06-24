@@ -163,7 +163,7 @@ const Comp = () => {
 - Because React cannot keep track of local variables.
 - React says that everytime you want your UI to be in sync with your variable use "State".
 - React keeps track of all State variables.
-- So whenever we update a state variable, the comp. automatically re-renders.
+- So whenever we update a state variable, the component automatically re-renders i.e the whole component is destroyed and created once again and this whole process happens very fast. BTS Reconcilation happens.
 - React by default has One way data binding. But using state we can acheive Two way data binding.
 
 ## Hooks :
@@ -179,4 +179,7 @@ const Comp = () => {
 
 
 
-0 : 1 hr
+
+
+
+0 : 01.49.00
