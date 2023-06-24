@@ -85,12 +85,68 @@ import * as xyz, {Title} from "./components/Title.js";
 
 ## Input field not working : One way data binding
 
-- When you try adding a input element in a React component's using JSX, on rendering it won't work.
+- When you add an input element in a React component using JSX, on rendering it won't work.
 - You won't be able to type anything in it unlike in plain HTML it would work.
 - It is happening because React uses ONE WAY DATA BINDING.
-- It means while writing anything in input field we somehow need to modify the variable assigned to value by using "onChange" attribute.
+- It means while writing anything in input field, React re-renders the comp. and we somehow need to modify the variable assigned to value by using "onChange" attribute. But it still won't work.
+  
+```js
+const Body = () => {
+  let searchTxt = 'KFC'
 
+  return (
+    <>
+      <div className="searchcontainer">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search"
+          value={searchTxt}
+          onChange={(e) =>  searchTxt = e.target.value)}
+        />
+        ....
+};
+```
+- Thus, we conclude that Local variables don't work in React. We can use them to display constant values but can't update them.
+- We need a React type of variable which can be changed dynamically known as "State".
 
+## State :
+
+- Every component in React maintains a State.
+- We can put all the variables in State.
+- We use useState() hook for it.
+```js
+const [searchText] = useState()
+
+// searchText - is a local state variable. We can use it like a normal variable.
+```
+- But React says we cannot modify a variable like 'searchText' directly.
+- We can only modify the state variable by using the function provided by useState().
+- The updated code looks like :
+```js
+const Body = () => {
+  //const searchTxt = 'KFC'
+  const [searchText, setSearchText] = useState('KFC')
+
+  return (
+    <>
+      <div className="searchcontainer">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search"
+          value={searchText}
+          onChange={(e) =>  setSearchText(e.target.value)}
+        />
+        ......
+};
+```
+
+## Hooks :
+
+- A hook is just a normal function.
+- Every hook provides us with a specific functionality.
+- Eg: useState() hook exported by 'react' library is used to create State variables.
 
 
 
