@@ -83,6 +83,12 @@ import * as xyz, {Title} from "./components/Title.js";
 - We put all the harcoded things into our config file.
 - Eg : Image URL, obj list array like 'restaurantList', etc.
 
+## Input field not working : One way data binding
+
+- When you try adding a input element in a React component's using JSX, on rendering it won't work.
+- You won't be able to type anything in it unlike in plain HTML it would work.
+- It is happening because React uses ONE WAY DATA BINDING.
+- It means while writing anything in input field we somehow need to modify the variable assigned to value by using "onChange" attribute.
 
 
 
@@ -93,5 +99,4 @@ import * as xyz, {Title} from "./components/Title.js";
 
 
 
-
-0
+0 : 1 hr
