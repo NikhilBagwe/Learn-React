@@ -114,14 +114,19 @@ const Body = () => {
 
 - Every component in React maintains a State.
 - We can put all the variables in State.
-- We use useState() hook for it.
+- We use useState() hook for it. useState() hook returns a array which looks like : [variableName, setFunction to update the variable]
+- Thus, we use destructuring while using it.
 ```js
-const [searchText] = useState()
+const [searchText, setSearchText] = useState()
 
 // searchText - is a local state variable. We can use it like a normal variable.
+
+// OR  -  another way to write -----
+const searchVar = useState()
+const [searchText, setSearchText] = searchVar
 ```
 - But React says we cannot modify a variable like 'searchText' directly.
-- We can only modify the state variable by using the function provided by useState().
+- We can only modify the state variable by using the function provided by useState() and calling it in onChange.
 - The updated code looks like :
 ```js
 const Body = () => {
@@ -137,10 +142,29 @@ const Body = () => {
           placeholder="Search"
           value={searchText}
           onChange={(e) =>  setSearchText(e.target.value)}
-        />
+        />{searchText}
         ......
 };
 ```
+- In above code we are updating 'searchText' as well as displaying it. Thus, we successfully acheived TWO WAY DATA BINDING in React.
+
+## Why do we need State variables ? (IMP)
+
+- Suppose if we are using a normal local variable in our functional component and displaying it.
+```js
+const Comp = () => {
+    let num = 10;
+
+    return({num})
+}
+```
+- Some function updated it's value to 11.
+- In this case, React will not know that it has to update the DOM i.e UI
+- Because React cannot keep track of local variables.
+- React says that everytime you want your UI to be in sync with your variable use "State".
+- React keeps track of all State variables.
+- So whenever we update a state variable, the comp. automatically re-renders.
+- React by default has One way data binding. But using state we can acheive Two way data binding.
 
 ## Hooks :
 
