@@ -48,9 +48,28 @@
 
 ## 5. What is crossorigin in script tag ?
 
+- It provides support for CORS(cross-origin resource sharing), defining how the element handles cross-origin requests.
+- It is used to handle the CORS request that checks whether it is safe to allow for sharing the resources from other domains.
+- Resources may include Audio, Video, Images, Link or external script.
+- CORS : It is a mechanism by which one webpage requests to another domain for fetching out the resource like audio, video, script, etc. from the third party server
+
 ## 6. What is diference between React and ReactDOM ?
 
+- The react package holds the react source for components, state, props and all the code that is react.
+- The react-dom package as the name implies is the glue between React and the DOM. Often, you will only use it for one single thing: mounting your application to the index.html file with ReactDOM.render().
+- React DOM is the glue between React and the DOM. When u want to show your react component on DOM u need to use this ReactDOM.render(); from React Dom.
+- React is used in web and in mobile. React-Dom is used only in web apps.
+- In a nutshell, Whenever we use component, classes, elements, etc. We’re using React and whenever we use methods like render() or findDOMNode() we’re using React-DOM.
+
+
 ## 7. What is difference between react.development.js and react.production.js files via CDN?
+
+- Development build runs the code as a Development environment and it is very slow.
+- Production build is for running the code on client browsers with more performance improvements.
+
+- react.development.js: This file is used during development and contains the full, uncompressed version of the React library. It includes additional warnings and error messages that are helpful for debugging and development purposes. It is larger in size compared to the production version.
+
+- react.production.js: This file is optimized for production environments and is used when you are ready to deploy your application. It is a minimized and optimized version of the React library, which means it has been stripped of development-specific features, warnings, and extra code. It is smaller in size compared to the development version, resulting in faster load times for your application.
 
 ## 8. What is async and defer?
 
